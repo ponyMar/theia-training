@@ -1,0 +1,34 @@
+{
+  "name": "theia-training",
+  "keywords": [
+    "theia-extension"
+  ],
+  "version": "0.0.0",
+  "files": [
+    "lib",
+    "src"
+  ],
+  "dependencies": {
+    "@theia/core": "latest",
+    "@theia/json": "latest",
+    "react-jsonschema-form": "^1.0.3",
+    "xml2js": "^0.4.23"
+  },
+  "devDependencies": {
+    "rimraf": "latest",
+    "typescript": "latest",
+    "@types/react-jsonschema-form": "^1.0.5"
+  },
+  "scripts": {
+    "prepare": "yarn run clean && yarn run build",
+    "clean": "rimraf lib",
+    "build": "tsc",
+    "watch": "tsc -w"
+  },
+  "theiaExtensions": [
+    {
+      "frontend": "lib/browser/theia-training-frontend-module",
+      "backend": "lib/node/theia-training-backend-module"
+    }
+  ]
+}
